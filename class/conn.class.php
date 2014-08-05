@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	include('./global.class.php');    //引入配置文件
 	echo $host, $username, $password, $database;    //测试配置文件是否引入成功
 
