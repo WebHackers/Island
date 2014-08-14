@@ -4,6 +4,6 @@
 	 */
 	$host = 'localhost';
 	$username = 'root';
-	$password = '';
+	$password = 'root_fei<7819';
 	$database = 'blog';
 ?>
