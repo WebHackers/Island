@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* CSS Document */
+#toolbar {
+	background-color: #000;
+	padding:5px;
+}
+#toolbar-menu {
+	float: right;
+	font-size: 14px;
+	margin: 0;
+}
+#toolbar-menu a{
+	color:#FFF;
+	text-decoration:none;
+}
+#toolbar-menu li {
+	width: 45px;
+	float: left;
+	margin-left: 0;
+	list-style-type: none;
+	padding: 0;
+}
+#header {
+	position:relative;
+	height: 34px;
+}
+#logo{
+	position:absolute;
+	left:0;
+	bottom:0;
+	float:left;
+}
+#time{
+	float:left;
+	position:absolute;
+	bottom:0;
+	left:100px;
+	font-size:12px;
+	font color:#F00;
+}
+#search{
+	background:url(../image/f603918fa0ec08fa2b5c92d85bee3d6d55fbda75.jpg);
+	width:272px;
+	height:34px;
+	position:absolute;
+	right:0;
+	bottom:0;
+	float:right;
+}
+#searchbox{
+	display:block;
+	margin-left:37px;
+	margin-top:5px;
+
+}
+/*菜单栏样式*/
+	.bg {background:url(../image/button4.gif);}
+.mainmenu-ul {padding:0 0 0 32px; margin:0; list-style:none; height:40px; background:#fff url(../image/button1a.gif) repeat-x; position:relative; font-family:arial, verdana, sans-serif; margin-top:0px;}
+.mainmenu-ul li.top {display:block; float:left; position:relative;}
+.mainmenu-ul li a.top_link {display:block; float:left; height:40px; line-height:33px; color:#bbb; text-decoration:none; font-size:11px; font-weight:bold; padding:0 0 0 12px; cursor:pointer;}
+.mainmenu-ul li a.top_link span {float:left; font-weight:bold; display:block; padding:0 24px 0 12px; height:40px;}
+.mainmenu-ul li a.top_link span.down {float:left; display:block; padding:0 24px 0 12px; height:40px; background:url(../img/down.gif) no-repeat right top;}
+.mainmenu-ul li a.top_link:hover {color:#000; background:url(../image/button4.gif) no-repeat;}
+.mainmenu-ul li a.top_link:hover span {background:url(../image/button4.gif) no-repeat right top;}
+.mainmenu-ul li a.top_link:hover span.down {background:url(../image/button4a.gif) no-repeat right top;}
+
+.mainmenu-ul li:hover > a.top_link {color:#000; background: url(../image/button4.gif) no-repeat;}
+.mainmenu-ul li:hover > a.top_link span {background:url(../image/button4.gif) no-repeat right top;}
+.mainmenu-ul li:hover > a.top_link span.down {background:url(../image/button4a.gif) no-repeat right top;}
+
+.mainmenu-ul table {border-collapse:collapse; width:0; height:0; position:absolute; top:0; left:0;}
+
+.mainmenu-ul a:hover {visibility:visible;}
+.mainmenu-ul li:hover {position:relative; z-index:200;}
+
+.mainmenu-ul ul, 
+.mainmenu-ul :hover ul ul, 
+.mainmenu-ul :hover ul :hover ul ul,
+.mainmenu-ul :hover ul :hover ul :hover ul ul,
+.mainmenu-ul :hover ul :hover ul :hover ul :hover ul ul {position:absolute; left:-9999px; top:-9999px; width:0; height:0; margin:0; padding:0; list-style:none;}
+
+.mainmenu-ul :hover ul.sub {left:2px; top:40px; right:2px; background: #fff; padding:3px 0; border:1px solid #999999; white-space:nowrap; width:200px; height:auto;}
+.mainmenu-ul :hover ul.sub li {display:block; height:20px; position:relative; float:left; width:250px;}
+.mainmenu-ul :hover ul.sub li a {font-weight:normal;display:block; font-size:11px; height:20px; width:192px; line-height:20px; text-indent:5px; color:#000; text-decoration:none; border:3px solid #fff; border-width:0 0 0 3px;}
+.mainmenu-ul :hover ul.sub li a.fly {background:#fff url(../image/arrow.gif) 80px 7px no-repeat;}
+.mainmenu-ul :hover ul.sub li a:hover {background:#999999; color:#fff;}
+.mainmenu-ul:hover ul.sub li a.fly:hover {background:#999999 url(../image/arrow_over.gif) 80px 7px no-repeat; color:#fff;}
+.mainmenu-ul :hover ul li:hover > a.fly {background:#999999  url(../image/arrow_over.gif) 80px 7px no-repeat; color:#fff;} 
+
+.mainmenu-ul :hover ul :hover ul,
+.mainmenu-ul:hover ul :hover ul :hover ul,
+.mainmenu-ul :hover ul :hover ul :hover ul :hover ul,
+.mainmenu-ul :hover ul :hover ul :hover ul :hover ul :hover ul
+{left:90px; top:-4px; background: #fff; padding:3px 0; border:1px solid 999999; white-space:nowrap; width:93px; z-index:200; height:auto;}
+/*菜单栏样式*/
+
+
+
+#textshow{
+	width:800px;
+	margin-bottom:20px;
+	padding:5px;
+	border:2px;
+	border-color:#000;
+	float:left;
+	border-style:solid;
+    margin-top:20px;
+	margin-left:60px;
+}
+.more{
+	border:1px;
+	text-align:center;
+	text-decoration:none;
+	margin:0;
+	padding:0;
+	border-style:double;
+	width:35px;
+	height:20px;
+	float:right;
+
+
+}
+#textshow-ul{
+	list-style:none;
+}
+#textshow-ul li{
+	font-size:16px;
+	margin:10px 0 0 20px;
+}
+
+#footer{
+	border-top:#666 2px;
+    margin-top:5px;
+	border-style:solid;
+	text-align:center;
+}

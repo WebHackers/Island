@@ -1,0 +1,37 @@
+body{background-image: url(../image/test1.jpg);
+background-position:top;
+margin: auto;
+background-repeat: repeat-x;
+
+ }
+ div#container{width: 100%;}
+div#header { width: 100%; height: 250px;
+margin-left: 40px;
+font-weight: bold;}
+div#info { height:300px; width:30%; float:left;
+margin-left:40px; 
+ }
+div#infolist{
+margin-left: 10px;
+}
+div#content { height:300px; width:70%; float:right;
+margin-left: 40px;}
+div#footer { clear:both; text-align:center;}
+h1 {margin-bottom:0;} 		
+h2 {margin-bottom:0; font-size:14px;}
+ul {margin:0;}
+li {list-style:none;}
+a {text-decoration: NONE;} 
+span.header{margin-left: 20px;
+margin-bottom: 2px;}
+span.info{
+color: grey;
+font-size: 14px;
+font-weight: bold;
+}
+span.cont{
+float:left;
+margin-top: -20px;
+font-weight: bold;
+color: green;
+}
