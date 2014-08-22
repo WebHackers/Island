@@ -1,12 +1,12 @@
 ﻿<?php
-	include('./conn.class.php');
-	//$conn = mysqli_connect("localhost", "root", "root_fei<7819", "blog") or die('Can not connect the database');
+	include('./class/conn.class.php');
 	
 	$id = $_GET['id'];
 	$sql = 'SELECT time, title, content FROM article WHERE id = ' . $id;
+	
 	if ($result = mysqli_query($db->conn, $sql)) {
 		while ($row = mysqli_fetch_array($result)) {
-			echo '<h2>' . $row['title'] . '</h2>';
+			echo '<h4>' . $row['title'] . '</h4>';
 			echo $row['content'];
 			echo '<p style="float:right">' . $row['time'] . '</p>';
 		}

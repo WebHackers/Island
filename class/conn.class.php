@@ -1,5 +1,8 @@
 ﻿<?php
-	include('./global.class.php');    //引入配置文件
+	$host = 'localhost';
+	$username = 'root';
+	$password = '';
+	$database = 'blog';
 
 	$connect = mysqli_connect($host, $username, $password) or die('Can not connect the database');
 

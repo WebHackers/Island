@@ -1,0 +1,30 @@
+
+
+.list p {
+	margin-top: 6px;
+	margin-bottom: 6px
+}
+
+.title {
+	float: left;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+.time {
+	float: right;
+}
+
+p[id^="d"] {
+	float: right;
+	cursor: pointer;
+	margin-right: 30px;
+	-moz-user-select: none;
+}
+
+p[id^="e"] {
+	float: right;
+	cursor: pointer;
+	margin-right: 20px;
+	-moz-user-select: none;
+}

@@ -74,9 +74,31 @@
 	</div>
 	
 <script type="text/javascript">
-	var j = false;
+var query = window.location.href.split('?')[1];
+var j = false;
+var operation = 'save';
+
+if (query) {
+	var id = query.split('=')[1];
+
+	$.post(
+		'./class/alter.class.php',
+		{
+			id: id
+		},
+		function(data) {
+			var data = data.split('&&&&&');
+
+			$('#title').val(data[0]);
+			editor.setData(data[1]);
+		}
+	);
+
+	operation = 'alter';
+}
+
 	$('#submit').click(function() {
-		if(j)return;
+		if (j)return;
 		j = true;
 		var title = $('#title').val();
 		var content = editor.document.getBody().getHtml();
@@ -87,7 +109,13 @@
 		myday.getDate().toString()+'-'+
 		myday.getHours().toString()+'-'+
 		myday.getMinutes().toString();
-		var id = myday.getTime().toString();
+
+		if (!query) {
+			var id = myday.getTime().toString();
+		}
+		else {
+			var id = query.split('=')[1];
+		}
 
 		if(title==""||title==undefined) {
 			alert('please input title!');
@@ -99,6 +127,7 @@
 			$.post(
 				'./class/save.class.php',
 				{
+					operation: operation,
 					id: id,
 					time: time,
 					title: title,
@@ -110,6 +139,7 @@
 			);
 		}
 	});
+
 </script>
 </body>
 </html>

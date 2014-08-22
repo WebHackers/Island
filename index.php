@@ -3,9 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>BLOG首页</title>
+
     <link rel="stylesheet" type="text/css" href="./public/uikit/css/uikit.gradient.min.css">
     <script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="./public/uikit/js/uikit.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./public/stylesheet/index.css" />
     <link href="public/stylesheet/960_12_col.css" rel="stylesheet" type="text/css" />
     <link href="public/stylesheet/reset.css" rel="stylesheet" type="text/css" />
     <link href="public/stylesheet/style.css" rel="stylesheet" type="text/css" />
@@ -91,17 +94,16 @@ today.getDate(),"日",
     var x1 = null, y1 = null;
     var x2 = null, y2 = null;
 
-    $('.list').mousedown(function(e) {
+    $('.title').mousedown(function(e) {
         x1 = e.pageX;
         y1 = e.pageY;
     });
-    $('.list').mouseup(function(e) {
+    $('.title').mouseup(function(e) {
         x2 = e.pageX;
         y2 = e.pageY;
 
         if(x1==x2&&y1==y2) {
-            var id = $(this).attr('id').split("_");
-            id = id[1];
+            var id = $(this).attr('id').split("_")[1];
             window.location.assign('./read.php?id='+id);
         }
     });
@@ -110,6 +112,38 @@ today.getDate(),"日",
         y1 = null;
         x2 = null;
         y2 = null;
+    });
+
+    $('.list').mouseover(function() {
+        $('> p[id^="d"]', this).css('display', 'inline-block');
+        $('> p[id^="e"]', this).css('display', 'inline-block');
+    });
+
+    $('.list').mouseout(function() {
+        $('> p[id^="d"]', this).css('display', 'none');
+        $('> p[id^="e"]', this).css('display', 'none');
+    });
+
+    $('p[id^="d"]').click(function() {
+        var id = $(this).attr('id').split("_")[1];
+
+        $.post(
+            './class/delete.class.php',
+            {
+                id: id
+            },
+            function(data) {
+                alert(data);
+                if(data == 'Delete success') {
+                    window.location.reload();
+                }
+            }
+        ); 
+    });
+
+    $('p[id^="e"]').click(function() {
+        var id = $(this).attr('id').split("_")[1];
+        window.location.assign('./edit.php?id='+id);
     });
 </script>
 </body>
