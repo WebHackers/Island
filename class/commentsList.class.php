@@ -7,10 +7,6 @@
 	*version 0.1
 	*@package class
 	*/
-
-	 /*
-	    此版本未经过测试可能存在bug或不能运行等问题,过两天重新发一份
-	 */
 	   
 	$sql = 'SELECT * FROM comments';
 	$result = mysqli_query($con, $sql);
