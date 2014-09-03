@@ -35,7 +35,7 @@
 
 				</div>-->
 				<!-- Set title and submit -->
-        		<button class="uk-button uk-button-primary" type="button" data-uk-button data-uk-modal="{target:'#my-id'}" style="float:right;margin-right:20px;">Set title & Save</button>
+        		<button class="uk-button uk-button-primary" type="button" data-uk-modal="{target:'#my-id'}" style="float:right;margin-right:20px;">Set title & Save</button>
     			</fieldset>
 			</form>
 			<!-- ckeditor -->
@@ -58,7 +58,7 @@
         				<input id="title" type="text" placeholder="Input title" class="uk-form-large uk-width-1-1">
     				</div>
     				<div class="uk-width-2-5">
-    					<button id="submit" class="uk-button-large uk-button" type="button" data-uk-button style="float:right;margin-right:60px;">Submit</button>
+    					<button id="submit" class="uk-button-large uk-button" type="button" style="float:right;margin-right:60px;">Submit</button>
     				</div>
     			</div>
     		</fieldset>
@@ -67,7 +67,7 @@
 			<div class="uk-grid">
 				<div class="uk-width-1-4"><br></div>
     			<div class="uk-width-2-4">
-					<button class="uk-button-danger uk-button uk-width-1-1 uk-modal-close" type="button" data-uk-button>Cancel</button>
+					<button class="uk-button-danger uk-button uk-width-1-1 uk-modal-close" type="button">Cancel</button>
 				</div>
 			</div>
     	</div>

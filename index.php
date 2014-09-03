@@ -1,150 +1,111 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>BLOG首页</title>
-
-    <link rel="stylesheet" type="text/css" href="./public/uikit/css/uikit.gradient.min.css">
-    <script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./public/uikit/js/uikit.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="./public/stylesheet/index.css" />
-    <link href="public/stylesheet/960_12_col.css" rel="stylesheet" type="text/css" />
-    <link href="public/stylesheet/reset.css" rel="stylesheet" type="text/css" />
-    <link href="public/stylesheet/style.css" rel="stylesheet" type="text/css" />
-    <link href="public/stylesheet/text.css" rel="stylesheet" type="text/css" />
-</head>
-
-
-<body>
-<div id="toolbar">                          <!--最上方导航栏-->
-<div class="container_12">
-<div  class="grid_12">
-<ul id="toolbar-menu">
-<li><a href="#">注册</a></li>
-<li><a href="#">登陆</a></li>
-</ul>
-</div>
-</div>
-</div>                                      <!--最上方导航栏-->
-<div class="container_12">                    <!--主体部分-->
-<div id="header" class="grid_12">        <!--头部 LOGO 时间 关键字搜索-->
-  <img id="logo" src="public/image/4543072.gif" width="100" height="34" />
-<div id="time">
-  <script language=JavaScript>
-today=new Date(); 
-document.write( 
-"你好，今天是", 
-today.getFullYear(),"年", 
-today.getMonth()+1,"月", 
-today.getDate(),"日", 
-" 欢迎你的到来</font>" ); 
-</script>
- </div>
-<div id="search">
-    <form.....>
-        <input id="searchbox"......./>
-    </form>
-</div>
-
-</div> 
-
-
-
-<div id="mainmenu" class="grid_12">              <!--菜单栏  内容待定-->
-<ul class="mainmenu-ul" >
-    <li class="top"><a href="#" class="top_link"><span>首页</span></a></li>
-	<li class="top"><a href="#" class="top_link"><span>热门微博</span></a></li>
-	<li class="top"><a href="#" class="top_link"><span>随便看看</span></a></li>
-	<li class="top"><a href="#" class="top_link"><span>论坛专区</span></a></li>
-    <li class="top"><a href="#" class="top_link"><span>待定</span></a></li>
-	<li class="top"><a href="#" class="top_link"><span>待定</span></a></li>
-	<li class="top"><a href="#" class="top_link"><span>待定</span></a></li>
-</ul>
-</div>                                           
-<div id="mainbody" class="grid_12">          <!--主体 上方以图片形式显示最新最热博文 下方以分类 列表形式展现博文-->
-
-<div  id="textshow" >           <!--分类显示博文-->
-
-<ul class="uk-list uk-list-striped">
-
 <?php
-    include('./class/list.class.php');
+	session_start();//初始化session
+	if (isset($_SESSION['logined']))
+	{
+		if($_SESSION['logined'] == 1) {
+			header("Location:./testHome.php");
+	 		exit();
+		}
+		else {
+			session_destroy();
+			setcookie("logined", '', time()-3600);
+		}
+	}
+	else {
+		if(!empty($_COOKIE['logined'])) {
+			$_SESSION['logined'] = $_COOKIE['logined'];
+			header("Location:./testHome.php");
+	 		exit();
+		}
+	}
 ?>
 
-</ul>
-</div>
-</div>
+<DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome</title>
+	<link rel="stylesheet" type="text/css" href="./public/uikit/css/uikit.gradient.min.css">
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="./public/uikit/js/uikit.min.js"></script>
 
+	<style type="text/css">
+		.reg {
+			margin: 10px 30px 10px 20px;
+		}
 
-<div class="clear"></div>
-<div>
-    <div class="container_12">
-        <div id="footer" class="grid_12">
-            <font color="#999999" >创客联盟版权所有</font>
-        </div>
-    </div>
-</div>
+		#loginPage {
+			float: right;
+			margin: 100px 100px 50px 50px;
+		}
 
-</div>
+		.login {
+			
+		}
 
+		#loginEmail {
+			margin: 20px 30px 5px 30px;
+		}
 
+		#loginPass {
+			margin: 5px 30px 20px 30px;
+		}
 
-<script type="text/javascript">
-    var x1 = null, y1 = null;
-    var x2 = null, y2 = null;
+		#loginBtn {
+			margin: 0 10px 20px 30px;
+		}
 
-    $('.title').mousedown(function(e) {
-        x1 = e.pageX;
-        y1 = e.pageY;
-    });
-    $('.title').mouseup(function(e) {
-        x2 = e.pageX;
-        y2 = e.pageY;
+		#registBtn {
+			margin: 0 0 20px 10px;
+		}
+	</style>
+</head>
 
-        if(x1==x2&&y1==y2) {
-            var id = $(this).attr('id').split("_")[1];
-            window.location.assign('./read.php?id='+id);
-        }
-    });
-    $(document).mouseup(function(e) {
-        x1 = null;
-        y1 = null;
-        x2 = null;
-        y2 = null;
-    });
+<body>
+	<div style="width: 100%;height: 450px;background-color: #415065;">
+		<form class="uk-form" id="loginPage">
+    		<fieldset>
+    			<div id="loginTip" style="height:20px;color:white;margin:0 0 0 30px"></div>
+        		<input class="uk-form-large login" id="loginEmail" type="text" placeholder="Email"><br>
+        		<input class="uk-form-large login" id="loginPass" type="password" placeholder="Password"><br>
+     			<button class="uk-button" id="loginBtn" type="button">Login</button>
+     			<button class="uk-button" id="registBtn" type="button" data-uk-modal="{target:'#regPage'}">Regist</button>
+    		</fieldset>
+		</form>
+	</div>
+	<!-- the dialog page for regist -->
+	<a href="#regPage" data-uk-modal></a>
 
-    $('.list').mouseover(function() {
-        $('> p[id^="d"]', this).css('display', 'inline-block');
-        $('> p[id^="e"]', this).css('display', 'inline-block');
-    });
+	<div id="regPage" class="uk-modal">
+		<div class="uk-modal-dialog">
+    	    <a class="uk-modal-close uk-close"></a>
 
-    $('.list').mouseout(function() {
-        $('> p[id^="d"]', this).css('display', 'none');
-        $('> p[id^="e"]', this).css('display', 'none');
-    });
+    	    <div class="uk-grid">
+    	    	<div class="uk-width-1-5"><br></div>
+    	    	<div class="uk-width-4-5">
+    	    		<form class="uk-form">
+    	    			<legend style="width: 60%;">Regist</legend>
+						<input class="reg uk-form-width-medium" id="regName" type="text" placeholder="User Name" data-uk-tooltip="{pos:'left'}" title="3-16 chars (A-z0-9_)">
+						<span id="nameSpan"></span><br>
 
-    $('p[id^="d"]').click(function() {
-        var id = $(this).attr('id').split("_")[1];
+						<input class="reg uk-form-width-medium" id="regEmail" type="text" placeholder="Email" data-uk-tooltip="{pos:'left'}" title="You will login with it">
+						<span id="emailSpan"></span><br>
 
-        $.post(
-            './class/delete.class.php',
-            {
-                id: id
-            },
-            function(data) {
-                alert(data);
-                if(data == 'Delete success') {
-                    window.location.reload();
-                }
-            }
-        ); 
-    });
+						<input class="reg uk-form-width-medium" id="regPassword" type="password" placeholder="Password" data-uk-tooltip="{pos:'left'}" title="6-18 chars (A-z0-9_)">
+						<span id="passSpan"></span><br>
 
-    $('p[id^="e"]').click(function() {
-        var id = $(this).attr('id').split("_")[1];
-        window.location.assign('./edit.php?id='+id);
-    });
-</script>
+						<input class="reg uk-form-width-medium" id="repeat" type="password" placeholder="Repeat Password" data-uk-tooltip="{pos:'left'}" title="Repeat you key">
+						<span id="repeatSpan"></span><br>
+
+						<button class="uk-button reg" id="regist" type="button" disabled data-uk-tooltip="{pos:'left'}" title="Regist now">Regist</button>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="./public/javascript/index/regist.js"></script>
+<script type="text/javascript" src="./public/javascript/index/login.js"></script>
 </body>
 </html>

@@ -15,8 +15,8 @@
 		$sql = "CREATE TABLE if Not Exists article
 		(
 			id varchar(15),
-			time varchar(16),
-			title varchar(80),
+			time varchar(17),
+			title varchar(81),
 			content text
 		)";
 
